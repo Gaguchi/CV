@@ -13,7 +13,44 @@ export default class Room{
     }
     
     setModel(){
+        this.actualRoom.children.forEach((child) => {
+            child.castShadow = true;
+            child.receiveShadow = true;
+
+            
+
+            if (child instanceof THREE.Group) {
+                child.children.forEach((groupchild) => {
+                    console.log(groupchild.material);
+                    groupchild.castShadow = true;
+                    groupchild.receiveShadow = true;
+                });
+            }
+            // console.log(child);
+
+            // if (
+            //     child.name === "Mailbox" ||
+            //     child.name === "Lamp" ||
+            //     child.name === "FloorFirst" ||
+            //     child.name === "FloorSecond" ||
+            //     child.name === "FloorThird" ||
+            //     child.name === "Dirt" ||
+            //     child.name === "Flower1" ||
+            //     child.name === "Flower2"
+            // ) {
+            //     child.scale.set(0, 0, 0);
+            // }
+            
+
+            if (child.name === "Screen") {
+                child.material = new THREE.MeshBasicMaterial({
+                    map: this.resources.items.screen,
+                });
+            }
+        });
+
         this.scene.add(this.actualRoom);
+        this.actualRoom.scale.set(0.11, 0.11, 0.11);
     }
 
     resize() {

@@ -12,7 +12,7 @@ export default class World{
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
 
-        this.resources.on("ready", ()=>{
+        this.resources.on("ready", ()=> {
             this.environment = new Environment();
             this.Room = new Room();
         })
