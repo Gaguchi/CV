@@ -8,5 +8,10 @@ export default[
         name:"screen",
         type:"videoTexture",
         path:"/textures/kda.mp4"
+    },
+    {
+        name:"screen2",
+        type:"videoTexture",
+        path:"/textures/Coding.mp4"
     }
 ]
