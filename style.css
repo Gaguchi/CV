@@ -26,7 +26,7 @@ svg{
   /* Light Theme Variables */
   --color-text-light: #333332;
   --color-background-light: #FAF4E5;
-  --color-pink-light: #e5a1aa;
+  --color-pink-light: #4591d8;
   --color-green-light: #7AD0AC;
   --color-blue-light: #8395CD;
 
@@ -69,7 +69,6 @@ svg{
 }
 
 /* Preloader */
-/* 
 .preloader{
   background-color: var(--color-background-light);
   width: 100%;
@@ -123,7 +122,7 @@ svg{
     transform: translateY(0)
   }
   
-} */
+}
 
 /* Page Itself --------------------------------------------- */
 .page{
@@ -474,3 +473,115 @@ svg{
   }
 }
 
+/* form */
+form {
+  max-width: 500px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  filter: drop-shadow(1px 1px 1px #7ad0ac);
+  background-color: #ffffff;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #aaa;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+::placeholder {
+  color: #aaa;
+}
+
+@media screen and (max-width: 500px) {
+  input,
+  textarea {
+    width: 100%;
+  }
+}
+
+span#django {
+  color: #092e20;
+  font-weight: bold;
+}
+
+span#laravel {
+  color: #e13d2e;
+  font-weight: bold;
+}
+
+span#react {
+  color: #61dafb;
+  font-weight: bold;
+}
+
+span#angular {
+  color: #C3002F;
+  font-weight: bold;
+}
+
+span#vue {
+  color: #41b883;
+  font-weight: bold;
+}
+
+span#python {
+  color: #37709f;
+  font-weight: bold;
+}
+
+span#js {
+  color: #000000;
+  font-weight: bold;
+}
+
+span#php {
+  color: #777bb3;
+  font-weight: bold;
+}
+
+span#java {
+  color: #e76f00;
+  font-weight: bold;
+}
+
+span#c {
+  color: #a179dc;
+  font-weight: bold;
+}
+
+#logo {
+  max-height: 20px;
+  margin-bottom: -5px;
+}
