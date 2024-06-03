@@ -208,30 +208,30 @@ export default class Controls {
                         invalidateOnRefresh: true,
                     },
                 })
-                    .to(
-                        this.room.scale,
-                        {
-                            x: 0.25,
-                            y: 0.25,
-                            z: 0.25,
-                        },
-                        "same"
-                    )
-                    .to(
-                        this.rectLight,
-                        {
-                            width: 0.3 * 3.4,
-                            height: 0.4 * 3.4,
-                        },
-                        "same"
-                    )
-                    .to(
-                        this.room.position,
-                        {
-                            x: 1.5,
-                        },
-                        "same"
-                    );
+                .to(
+                    this.room.scale,
+                    {
+                        x: 0.25,
+                        y: 0.25,
+                        z: 0.25,
+                    },
+                    "same"
+                )
+                .to(
+                    this.rectLight,
+                    {
+                        width: 0.3 * 3.4,
+                        height: 0.4 * 3.4,
+                    },
+                    "same"
+                )
+                .to(
+                    this.room.position,
+                    {
+                        x: 1.5,
+                    },
+                    "same"
+                );
 
                 // Third section -----------------------------------------
                 this.thirdMoveTimeline = new GSAP.timeline({
@@ -242,7 +242,11 @@ export default class Controls {
                         scrub: 0.6,
                         invalidateOnRefresh: true,
                     },
-                });
+                })
+                .to(this.camera.orthographicCamera.position, {
+                    y: 1.5,
+                    x: -4.1,
+                })
                 // .to(this.room.position, {
                 //     z: -4.5,
                 // });
@@ -349,6 +353,17 @@ export default class Controls {
                         "same"
                     );
 
+                    // let bedObject = this.room.children.find(child => child.name === 'bed');
+                    // console.log(bedObject); // Log the bed object
+    
+                    // if (bedObject) {
+                    //     this.secondMoveTimeline.to(bedObject.scale, {
+                    //         x: 0,
+                    //         y: 0,
+                    //         z: 0,
+                    //     });
+                    // }
+
                 // Third section -----------------------------------------
                 this.thirdCircle = new GSAP.timeline({
                     scrollTrigger: {
@@ -392,15 +407,6 @@ export default class Controls {
                             x: 1,
                             y: 1,
                             z: 1,
-                            ease: "back.out(2)",
-                            duration: 0.3,
-                        });
-                    }
-                    if (child.name === "bed") {
-                        this.fourth = GSAP.to(child.scale, {
-                            x: 0,
-                            y: 0,
-                            z: 0,
                             ease: "back.out(2)",
                             duration: 0.3,
                         });
